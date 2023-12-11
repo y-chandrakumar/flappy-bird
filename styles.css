@@ -1,0 +1,76 @@
+.gameboard{
+    border: solid black;
+
+    width: 80vw;
+    height: 80vh;
+    margin: auto auto;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    /* background-color: grey; */
+    overflow: hidden;
+    
+}
+
+.player1{
+    border: solid black;
+    background-color: red;
+    width: 2vw;
+    height: 5vh;
+    position: relative;
+    top: 45vh;
+    left: 5vw;
+    z-index: 10;
+    transition: transform 0.1s ease-in-out;
+    
+}
+
+
+
+.fullscreen{
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    cursor: pointer;
+
+}
+
+
+
+.retry{
+    cursor: pointer;
+    display: none;
+}
+
+
+.obstacle {
+    position: absolute;
+    width: 50px;
+    height: 150px; /* You can adjust the height of the obstacles */
+    background-color: green;
+    /* animation-fill-mode: forwards; */
+}
+
+
+@keyframes moveObstacle {
+    from {
+        transform: translateX(100%); /* Starting position outside the right edge of the screen */
+    }
+
+    to {
+        transform: translateX(-10000000vw); /* Ending position outside the left edge of the screen */
+    }
+}
+
+
+@keyframes fly {
+   
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10vh);
+        }
+      
+    
+}
