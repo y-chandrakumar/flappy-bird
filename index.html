@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="files/bird.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy-bird</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <button  class="retry btn btn-info" id="retrybtn"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></button>
+
+
+  <div class="highestscore" id="highestscore"> <b> Highest Score:0</b></div>
+    <h2 id="scoreboard">Score:0</h2>
+    <button  class="fullscreen btn btn-info" id="fullscreenbutton">[ ]</button>
+    <div class="gameboard" id="gameboard">
+        <div class="player1" id="player1"><img src="files/bird.svg"  alt="bird"></div>
+        <button class="start btn btn-info" id="startbtn">startGame</button>
+    </div>
+
+
+    <div class="container ">
+        <div class="container  footer row ">
+          <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-2 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+              <!-- <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"> -->
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <span class="mb-3 mb-md-0 text-body-secondary">© created by chandra kumar</span>
+            </div>
+        
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+              <li class="ms-3"><a href="https://docs.google.com/forms/d/e/1FAIpQLScTu1oy98SUC58A-vQmqerAudKKn-yeI0h5uJ7J835lgj1NQA/viewform?usp=pp_url"  target="blank"><img class="bi bi-chat-square-text" width="24" height="24"  src="files/commentbox.svg" alt="feedback"></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/y-d-chandra-kumar-827a03275/?originalSubdomain=in " target="blank"><img src="files/linkedin.svg"  class="bi" width="24" height="24"  alt=""></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="https://github.com/y-chandrakumar" target="blank"><img src="files/github.svg" alt="" class="bi" width="24" height="24"  ></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/chandra_kumar_22/" target="blank"><img src="files/instagram.svg" alt="" class="bi" width="24" height="24"  ></a></li>
+            </ul>
+          </footer>
+        </div></div>
+        <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script> 
+
+
+
+
+
+
+
+
+        <!-- https://docs.google.com/forms/d/e/1FAIpQLScTu1oy98SUC58A-vQmqerAudKKn-yeI0h5uJ7J835lgj1NQA/viewform?usp=pp_url -->
+        <!-- <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+              </svg></a> -->
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
