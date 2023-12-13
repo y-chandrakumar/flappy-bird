@@ -143,6 +143,13 @@ const player = document.getElementById("player1");
 
     // Check for collision every 100 milliseconds (adjust as needed)
     setInterval(() => {
+        if (!gameover && isCollision()) {
+            gameover=true;
+            // console.log("collison happened");
+            retrybtn.style.display="block";
+           localStorage.setItem('Highest score',Math.max(localStorage.getItem('Highest score'),score));
+            stopAnimation();
+        }
         const boardRect = gameboard.getBoundingClientRect();
         const obstacleRectdown = obstacle[1].getBoundingClientRect();
         
@@ -154,13 +161,7 @@ const player = document.getElementById("player1");
             document.getElementById("scoreboard").innerHTML="Score:"+score;
            }
         //    player.style.transform+="translateY(1vh)";
-        if (!gameover && isCollision()) {
-            gameover=true;
-            // console.log("collison happened");
-            retrybtn.style.display="block";
-           localStorage.setItem('Highest score',Math.max(localStorage.getItem('Highest score'),score));
-            stopAnimation();
-        }
+        
         // console.log("no collison happened");
     }, 5);
 
