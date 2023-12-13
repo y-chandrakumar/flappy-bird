@@ -162,7 +162,7 @@ const player = document.getElementById("player1");
             stopAnimation();
         }
         // console.log("no collison happened");
-    }, 10);
+    }, 5);
 
     setInterval(()=>{
         if(!gameover){
